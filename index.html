@@ -1,185 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI‑Via — Smart Traffic Management</title>
-  <meta name="description" content="AI‑Via is an AI‑powered smart traffic management platform that prioritizes emergency vehicles and optimizes city traffic flow." />
+  <meta name="description"
+    content="AI‑Via is an AI‑powered smart traffic management platform that prioritizes emergency vehicles and optimizes city traffic flow." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
 
-  <style>
-    :root{
-      /* Brand palette */
-      --primary:#0B3D91;       /* Deep Navy */
-      --secondary:#00FF88;     /* AI Glow Green */
-      --accent:#00E5FF;        /* Electric Cyan */
-      --ink:#0b1020;           /* base text */
-      --muted:#6b7a90;         /* muted text */
-      --bg:#070b16;            /* page background */
-      --card:#0d1426;          /* card background */
-      --ring:rgba(0,229,255,.25);
-      --shadow:0 10px 30px rgba(0,0,0,.35), 0 2px 10px rgba(0,0,0,.2);
-      --radius:22px;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; 
-      font-family: "Inter";
-      color:#e8f0ff; background:var(--bg);
-    }
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    .container{width:min(1200px, 92%); margin-inline:auto}
-
-    /* ======= Global UI ======= */
-.btn {
-  display: inline-flex; 
-  align-items: center; 
-  gap: .7rem; 
-  padding: .9rem 1.2rem; 
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--secondary), var(--accent)); 
-  color: #001b26; /* reverted back */
-  font-weight: 800; 
-  letter-spacing: .2px;
-  border: 0; 
-  cursor: pointer; 
-  box-shadow: 0 8px 18px rgba(0,229,255,.18);
-  transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px); 
-  filter: saturate(1.1); 
-  box-shadow: 0 12px 24px rgba(0,229,255,.26);
-}
-
-.btn.outline {
-  background: transparent; 
-  color: #d8ecff; /* reverted back */
-  border: 1px solid rgba(255,255,255,.14);
-  box-shadow: none;
-}
-
-    .chip{display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .6rem; border:1px solid rgba(255,255,255,.12); border-radius:999px; font-weight:700; font-size:.85rem; color:#cfe9ff; background:rgba(255,255,255,.04)}
-    .tag{font-size:.85rem; color:#a9bed6}
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Russo One';
-      letter-spacing: 2px;
-    }
-    p, .tag, .subtle, label, li, input, textarea, .btn, .chip {
-      font-family: 'Inter';
-    }
-
-    /* ======= Top Nav ======= */
-    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(10px); background:rgba(7,11,22,.45); border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .brand{display:flex; align-items:center; gap:.75rem}
-    .logo{
-      width:44px; aspect-ratio:1; border-radius:12px;
-      background:radial-gradient(120% 120% at 10% 0%, var(--secondary) 0%, transparent 40%),
-                 radial-gradient(120% 120% at 100% 90%, var(--accent) 0%, transparent 50%),
-                 linear-gradient(135deg, #0e234d, #182b5a);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), var(--shadow);
-      display:grid; place-items:center; position:relative;
-    }
-    .logo svg{width:66%; opacity:.95}
-    .brand h1{font-size:1.2rem; margin:0; letter-spacing:.5px; font-weight:900}
-
-    .nav-links{display:flex; gap:24px; align-items:center}
-    .nav-links a{color:#001b26; font-weight:700; opacity:.85}
-    .nav-links a:hover{opacity:1}
-    .mobile-toggle{display:none; background:none; border:0; color:#e8f0ff}
-
-    @media (max-width:900px){
-      .nav-links{display:none}
-      .mobile-toggle{display:inline-flex}
-    }
-
-    /* ======= Hero ======= */
-    .hero{
-      position:relative; overflow:hidden; padding:64px 0 96px; isolation:isolate;
-      background:
-        radial-gradient(80% 50% at 20% -10%, rgba(0,229,255,.18), transparent 60%),
-        radial-gradient(60% 40% at 90% 0%, rgba(0,255,136,.18), transparent 60%),
-        linear-gradient(180deg, rgba(11,61,145,.16), transparent 60%);
-    }
-    .glow-blob{position:absolute; border-radius:999px; filter:blur(40px); opacity:.35; pointer-events:none}
-    .blob-a{width:520px; height:520px; background:radial-gradient(circle at 30% 30%, var(--accent), transparent 60%); top:-120px; left:-120px}
-    .blob-b{width:640px; height:640px; background:radial-gradient(circle at 60% 60%, var(--secondary), transparent 60%); bottom:-180px; right:-140px}
-
-    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:40px; align-items:center}
-    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
-
-    .eyebrow{display:inline-flex; gap:.55rem; align-items:center; margin-bottom:14px}
-    .eyebrow svg{width:18px; height:18px}
-    .hero h2{font-size: clamp(2rem, 4.8vw, 3.6rem); line-height:1.06; margin:.2rem 0 .75rem; font-weight:900}
-    .hero p{font-size: clamp(1rem, 1.6vw, 1.2rem); color:#cfe0ff; margin:0 0 1.4rem}
-    .hero-cta{display:flex; gap:12px; flex-wrap:wrap}
-
-    .hero-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.10); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)
-    }
-    .mini-kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-    .kpi{padding:16px; border-radius:16px; background:var(--card); border:1px solid rgba(255,255,255,.06)}
-    .kpi h3{margin:0; font-size:1.4rem}
-    .kpi p{margin:.25rem 0 0; color:#a9bed6; font-weight:700}
-
-    /* ======= Marquee ======= */
-    .marquee{overflow:hidden; white-space:nowrap; border-block:1px solid rgba(255,255,255,.06); background:rgba(255,255,255,.02)}
-    .marquee-track{display:inline-block; padding:12px 0; animation:scroll 35s linear infinite}
-    .marquee span{margin:0 28px; color:#b8d3ff; font-weight:800; letter-spacing:.4px}
-    @keyframes scroll{to{transform:translateX(-50%)}}
-
-    /* ======= Sections ======= */
-    section{padding:72px 0}
-    .section-head{display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:28px}
-    .section-head h3{font-size:clamp(1.4rem, 2.8vw, 2rem); margin:0; font-weight:900}
-    .section-head p{margin:0; color:#b8c7de}
-
-    .grid{display:grid; gap:18px}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width:1000px){.grid.cols-3{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:700px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
-
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015)); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); position:relative; overflow:hidden}
-    .card .corner{position:absolute; inset:auto 10px 10px auto; width:46px; height:46px; border-radius:12px; background:radial-gradient(80% 80% at 30% 30%, var(--secondary), transparent 70%); opacity:.18; filter:blur(6px)}
-    .card h4{margin:0 0 .4rem; font-size:1.15rem}
-    .card p{margin:0; color:#a9bed6}
-
-    .icon{width:44px; height:44px; display:grid; place-items:center; border-radius:12px; background:linear-gradient(135deg, rgba(0,255,136,.3), rgba(0,229,255,.3)); border:1px solid rgba(255,255,255,.14); margin-bottom:10px}
-    .icon svg{width:22px; height:22px}
-
-    /* ======= CTA / Banner ======= */
-    .cta{background:linear-gradient(180deg, rgba(0,229,255,.12), rgba(0,255,136,.08)); border:1px solid rgba(255,255,255,.12); border-radius:calc(var(--radius) + 6px); padding:28px; box-shadow:var(--shadow)}
-    .cta h4{margin:0 0 8px; font-size:1.4rem}
-    .cta p{margin:0 0 14px; color:#cfe0ff}
-
-    /* ======= Footer ======= */
-    footer{border-top:1px solid rgba(255,255,255,.06); padding:36px 0 50px; color:#a9bed6}
-    .foot-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:20px}
-    @media (max-width:800px){.foot-grid{grid-template-columns:1fr; gap:10px}}
-    .foot-brand p{margin:.5rem 0 0}
-    .foot-links{display:grid; grid-template-columns:repeat(2,1fr); gap:8px}
-    .subtle{color:#8aa3c0}
-
-    /* ======= Utilities ======= */
-    .sr{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
-    .muted{color:var(--muted)}
-
-    /* ======= Animations on Scroll ======= */
-    [data-animate]{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
-    [data-animate].in{opacity:1; transform:none}
-  </style>
+  
 </head>
 
 <body>
@@ -189,13 +24,8 @@
       <a href="#" class="brand" aria-label="AI‑Via home">
         <div class="logo" aria-hidden="true">
           <!-- Inline logo mark -->
-<img 
-  src="https://raw.githubusercontent.com/Rousoll/AI-Via-/main/AI-Via%20Favicon.png" 
-  alt="AI-Via Logo" 
-  width="50" 
-  height="50"
-  style="display:block"
-/>
+          <img src="https://raw.githubusercontent.com/Rousoll/AI-Via-/main/AI-Via%20Favicon.png" alt="AI-Via Logo"
+            width="50" height="50" style="display:block" />
 
         </div>
         <h1>AI‑Via</h1>
@@ -207,18 +37,28 @@
         <a href="#impact">Impact</a>
         <a href="#contact">Contact</a>
         <a class="btn" href="#demo">Request Demo
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
         </a>
       </nav>
 
       <button class="mobile-toggle" aria-label="Open navigation" id="menuBtn">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
       </button>
     </div>
   </header>
 
   <!-- ======= Mobile Drawer ======= -->
-  <div id="drawer" hidden style="position:fixed; inset:60px 0 0 0; background:rgba(7,11,22,.98); border-top:1px solid rgba(255,255,255,.06); z-index:40;">
+  <div id="drawer" hidden
+    style="position:fixed; inset:60px 0 0 0; background:rgba(7,11,22,.98); border-top:1px solid rgba(255,255,255,.06); z-index:40;">
     <div class="container" style="display:grid; gap:14px; padding:16px 0;">
       <a href="#features" class="card">Features</a>
       <a href="#how" class="card">How it works</a>
@@ -237,13 +77,17 @@
       <div>
         <div class="eyebrow">
           <span class="chip">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h4l3 7 4-14 3 7h4" stroke="#c7f9ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12h4l3 7 4-14 3 7h4" stroke="#c7f9ff" stroke-width="1.7" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
             Prioritize Emergency Vehicles
           </span>
           <span class="chip">Reduce Congestion</span>
         </div>
         <h2>AI‑powered traffic signals that save minutes when they matter most.</h2>
-        <p>AI‑Via uses real‑time vision and predictive optimization to clear routes for ambulances and fire units, while improving overall traffic flow across the city grid.</p>
+        <p>AI‑Via uses real‑time vision and predictive optimization to clear routes for ambulances and fire units, while
+          improving overall traffic flow across the city grid.</p>
         <div class="hero-cta">
           <a href="#demo" class="btn">Get a Live Demo</a>
           <a href="#features" class="btn outline">Explore Features</a>
@@ -270,23 +114,26 @@
           <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mock traffic timeline">
             <defs>
               <linearGradient id="g1" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0" stop-color="#00FF88"/>
-                <stop offset="1" stop-color="#00E5FF"/>
+                <stop offset="0" stop-color="#00FF88" />
+                <stop offset="1" stop-color="#00E5FF" />
               </linearGradient>
             </defs>
-            <rect width="640" height="300" fill="#0b1327"/>
+            <rect width="640" height="300" fill="#0b1327" />
             <g>
-              <polyline points="0,220 80,210 160,190 240,170 320,160 400,145 480,130 560,120 640,110" fill="none" stroke="url(#g1)" stroke-width="4" />
+              <polyline points="0,220 80,210 160,190 240,170 320,160 400,145 480,130 560,120 640,110" fill="none"
+                stroke="url(#g1)" stroke-width="4" />
               <g fill="#00e5ff">
-                <circle cx="240" cy="170" r="5"/>
-                <circle cx="400" cy="145" r="5"/>
-                <circle cx="560" cy="120" r="5"/>
+                <circle cx="240" cy="170" r="5" />
+                <circle cx="400" cy="145" r="5" />
+                <circle cx="560" cy="120" r="5" />
               </g>
               <text x="20" y="40" fill="#cfe0ff" font-family="Cairo" font-weight="800">Realtime Congestion Index</text>
             </g>
             <g>
-              <rect x="40" y="240" width="560" height="18" rx="9" fill="#0f1a33" stroke="rgba(255,255,255,.06)"/>
-              <rect x="40" y="240" width="220" height="18" rx="9" fill="url(#g1)"><animate attributeName="width" values="120;520;220" dur="8s" repeatCount="indefinite"/></rect>
+              <rect x="40" y="240" width="560" height="18" rx="9" fill="#0f1a33" stroke="rgba(255,255,255,.06)" />
+              <rect x="40" y="240" width="220" height="18" rx="9" fill="url(#g1)">
+                <animate attributeName="width" values="120;520;220" dur="8s" repeatCount="indefinite" />
+              </rect>
             </g>
           </svg>
         </div>
@@ -326,31 +173,45 @@
     <div class="container">
       <div class="section-head">
         <h3>What AI‑Via Does</h3>
-        <p class="tag">From camera to green light — in milliseconds.</p>
+        <p class="tag">From Camera to Green Light — in Seconds.</p>
       </div>
 
       <div class="grid cols-3">
         <article class="card" data-animate>
           <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#001b26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#001b26" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+            </svg>
           </div>
           <h4>Realtime Vehicle Detection</h4>
-          <p>Edge vision models detect ambulances, fire trucks, buses, and pedestrians with high accuracy — even at night or in rain.</p>
+          <p>Computer Vision models Detect the number of vehicles and labelling them to prioritize the traffic flow!</p>
           <div class="corner"></div>
         </article>
 
         <article class="card" data-animate>
           <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#001b26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M12 3v18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#001b26" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M3 12h18" />
+              <path d="M12 3v18" />
+            </svg>
           </div>
           <h4>Priority Signal Control</h4>
-          <p>Dynamic phase switching clears routes for emergency vehicles and reduces average wait times for all drivers.</p>
+          <p>Dynamic phase switching clears routes for emergency vehicles and reduces average wait times for all
+            drivers.</p>
           <div class="corner"></div>
         </article>
 
         <article class="card" data-animate>
           <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#001b26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14l6 6L20 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#001b26" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M4 14l6 6L20 6" />
+            </svg>
           </div>
           <h4>City‑Scale Analytics</h4>
           <p>Heatmaps, SLA tracking, and event playback help operations teams respond faster and plan better.</p>
@@ -415,7 +276,7 @@
         <p>Book a 20‑minute walkthrough of the dashboard, analytics, and a simulated junction.</p>
         <div>
           <a class="btn" href="#contact">Request a Demo</a>
-         
+
         </div>
       </div>
     </div>
@@ -430,19 +291,33 @@
       </div>
       <div class="card" style="display:flex; align-items:center; gap:32px; flex-wrap:wrap;">
         <div>
-        <img src="Rousol Sabobeh, Founder of AI-Via.jpeg"Founder Photo" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 4px 16px rgba(0,229,255,.12)">
-        <div>
-          <h4>Rousol Sabobeh</h4>
-          <p class="muted" style="margin-bottom:10px;">
-            <a href="https://www.linkedin.com/in/rousol-sabobeh" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; color:#00E5FF; font-weight:700;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M8 11v5"/><circle cx="8" cy="8" r="1"/><path d="M12 16v-3a2 2 0 0 1 4 0v3"/></svg>
-              LinkedIn
-            </a>
-          </p>
-          <p>An AI & Web Solutions Specialist, I design smart, scalable tools that integrate AI, web development, and digital marketing. I develop CMS-based websites using WordPress, Joomla, and Contentful, and I’m the founder of AI-Via, an AI-powered traffic management system that optimizes flow and prioritizes emergency vehicles. I have also created tools like FinPred, data cleaning scripts, QR code generators, and digital card creators to enhance efficiency and user engagement. With a background in Computer Science and certifications in IoT and Cybersecurity, I am committed to leveraging technology to solve real-world problems.</p>
+          <img src="Rousol Sabobeh, Founder of AI-Via.jpeg" Founder Photo"
+            style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 4px 16px rgba(0,229,255,.12)">
+          <div>
+            <h4>Rousol Sabobeh</h4>
+            <p class="muted" style="margin-bottom:10px;">
+              <a href="https://www.linkedin.com/in/rousol-sabobeh" target="_blank" rel="noopener"
+                style="display:inline-flex; align-items:center; gap:6px; color:#00E5FF; font-weight:700;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="4" />
+                  <path d="M8 11v5" />
+                  <circle cx="8" cy="8" r="1" />
+                  <path d="M12 16v-3a2 2 0 0 1 4 0v3" />
+                </svg>
+                LinkedIn
+              </a>
+            </p>
+            <p>An AI & Web Solutions Specialist, I design smart, scalable tools that integrate AI, web development, and
+              digital marketing. I develop CMS-based websites using WordPress, Joomla, and Contentful, and I’m the
+              founder of AI-Via, an AI-powered traffic management system that optimizes flow and prioritizes emergency
+              vehicles. I have also created tools like FinPred, data cleaning scripts, QR code generators, and digital
+              card creators to enhance efficiency and user engagement. With a background in Computer Science and
+              certifications in IoT and Cybersecurity, I am committed to leveraging technology to solve real-world
+              problems.</p>
+          </div>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- ======= Contact ======= -->
@@ -468,7 +343,8 @@
           </label>
           <label>
             <span class="subtle">Message</span>
-            <textarea required name="message" class="field" rows="4" placeholder="Tell us about your use case…"></textarea>
+            <textarea required name="message" class="field" rows="4"
+              placeholder="Tell us about your use case…"></textarea>
           </label>
           <button class="btn" type="submit">Send inquiry</button>
           <p id="formNote" class="muted" role="status" aria-live="polite"></p>
@@ -510,45 +386,9 @@
     </div>
   </footer>
 
-  <style>
-    /* Inputs styling kept inline for single‑file */
-    .field{
-      width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12);
-      background:#0b1327; color:#e7f2ff; outline: none; box-shadow: inset 0 0 0 1px transparent;
-      transition: box-shadow .2s ease, border-color .2s ease
-    }
-    .field:focus{box-shadow:0 0 0 6px var(--ring); border-color:var(--accent)}
-  </style>
 
-  <script>
-    // Mobile drawer
-    const menuBtn = document.getElementById('menuBtn');
-    const drawer = document.getElementById('drawer');
-    menuBtn?.addEventListener('click', () => {
-      const isHidden = drawer.hasAttribute('hidden');
-      drawer.toggleAttribute('hidden');
-      menuBtn.setAttribute('aria-expanded', String(isHidden));
-    });
+<script src="index.js"></script>
 
-    // Animate on scroll
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-    }, {threshold:.18});
-    document.querySelectorAll('[data-animate]').forEach(el => io.observe(el));
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Fake form handler (demo‑only)
-    const form = document.getElementById('contactForm');
-    const note = document.getElementById('formNote');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
-      console.log('Contact form submission', data);
-      note.textContent = 'Thank you! We\'ll get back to you within 1 business day.';
-      form.reset();
-    });
-  </script>
 </body>
+
 </html>
