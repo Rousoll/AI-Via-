@@ -88,10 +88,9 @@
           <span class="chip">Reduce Congestion</span>
         </div>
         <h2>AI‑powered traffic signals that save minutes when they matter most.</h2>
-        <p>AI‑Via uses real‑time vision and predictive optimization to clear routes for ambulances and fire units, while
-          improving overall traffic flow across the city grid.</p>
+        <p>AI‑Via uses real-time vision and predictive optimization to monitor traffic, detect and count vehicles, label them for prioritizing emergency vehicles, and optimize overall city traffic flow.</p>
         <div class="hero-cta">
-          <a href="#demo" class="btn">Get a Live Demo</a>
+          <a href="#demo" class="btn">Get a Glimpse!</a>
           <a href="#features" class="btn outline">Explore Features</a>
         </div>
       </div>
@@ -222,34 +221,43 @@
       </div>
     </div>
   </section>
+<!-- ===== How it works ====== -->
+<section id="how">
+  <div class="container">
+    <div class="section-head">
+      <h3>How it works</h3>
+      <p class="tag">Simple integration with existing controllers.</p>
+    </div>
 
-  <!-- ======= How It Works ======= -->
-  <section id="how">
-    <div class="container">
-      <div class="section-head">
-        <h3>How it works</h3>
-        <p class="tag">Simple integration with existing controllers.</p>
+    <div class="timeline-cards">
+      <div class="card timeline-card" data-animate>
+        <div class="step">1</div>
+        <h4>Detect</h4>
+        <p>Camera stream → on‑edge CNN/YOLO → vehicle class + lane + speed. Privacy‑preserving: no faces stored.</p>
       </div>
-      <div class="grid cols-2">
-        <div class="card" data-animate>
-          <h4>1) Detect</h4>
-          <p>Camera stream → on‑edge CNN/YOLO → vehicle class + lane + speed. Privacy‑preserving: no faces stored.</p>
-        </div>
-        <div class="card" data-animate>
-          <h4>2) Decide</h4>
-          <p>Reinforcement learning predicts optimal phase changes to minimize delay and prioritize emergencies.</p>
-        </div>
-        <div class="card" data-animate>
-          <h4>3) Act</h4>
-          <p>Signal controller receives commands via secure API/IO to switch to green corridors.</p>
-        </div>
-        <div class="card" data-animate>
-          <h4>4) Learn</h4>
-          <p>Continuous feedback loop updates policies per intersection and time of day.</p>
-        </div>
+
+      <div class="card timeline-card" data-animate>
+        <div class="step">2</div>
+        <h4>Decide</h4>
+        <p>Reinforcement learning predicts optimal phase changes to minimize delay and prioritize emergencies.</p>
+      </div>
+
+      <div class="card timeline-card" data-animate>
+        <div class="step">3</div>
+        <h4>Act</h4>
+        <p>Signal controller receives commands via secure API/IO to switch to green corridors.</p>
+      </div>
+
+      <div class="card timeline-card" data-animate>
+        <div class="step">4</div>
+        <h4>Learn</h4>
+        <p>Continuous feedback loop updates policies per intersection and time of day.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+
 
   <!-- ======= Impact / Stats ======= -->
   <section id="impact">
