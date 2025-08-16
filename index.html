@@ -321,43 +321,52 @@
   </section>
 
   <!-- ======= Contact ======= -->
- <form class="card" id="contactForm" style="display:grid; gap:12px">
-  <label>
-    <span class="subtle">Name</span>
-    <input required name="name" class="field" placeholder="Your full name" />
-  </label>
-  <label>
-    <span class="subtle">Work Email</span>
-    <input required type="email" name="email" class="field" placeholder="name@company.com" />
-  </label>
-  <label>
-    <span class="subtle">Company</span>
-    <input name="company" class="field" placeholder="Organization" />
-  </label>
-  <label>
-    <span class="subtle">Message</span>
-    <textarea required name="message" class="field" rows="4" placeholder="Tell us about your use case…"></textarea>
-  </label>
-  <button class="btn" type="submit">Send inquiry</button>
-  <p id="formNote" class="muted" role="status" aria-live="polite"></p>
-</form>
+<!-- ======= Contact ======= -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <h3>Contact</h3>
+      <p class="tag">Let’s talk pilots, integrations, and timelines.</p>
+    </div>
+    <div class="grid cols-2">
+      <form class="card" id="contactForm" style="display:grid; gap:12px">
+        <!-- Formspree hidden subject field -->
+        <input type="hidden" name="_subject" value="AI-Via Website Request">
 
+        <label>
+          <span class="subtle">Name</span>
+          <input required name="name" class="field" placeholder="Your full name" />
+        </label>
+        <label>
+          <span class="subtle">Work Email</span>
+          <input required type="email" name="email" class="field" placeholder="name@company.com" />
+        </label>
+        <label>
+          <span class="subtle">Company</span>
+          <input name="company" class="field" placeholder="Organization" />
+        </label>
+        <label>
+          <span class="subtle">Message</span>
+          <textarea required name="message" class="field" rows="4"
+            placeholder="Tell us about your use case…"></textarea>
+        </label>
+        <button class="btn" type="submit">Send inquiry</button>
+        <p id="formNote" class="muted" role="status" aria-live="polite"></p>
+      </form>
 
-
-
-        <div class="card" data-animate>
-          <h4>Why teams choose AI‑Via</h4>
-          <ul style="margin:.6rem 0 0; padding-left:1.1rem; line-height:1.7">
-            <li>Works with existing controllers and cameras</li>
-            <li>Edge‑first design reduces bandwidth needs</li>
-            <li>Privacy‑first — no PII or plate storage by default</li>
-            <li>City dashboard for planning & reporting</li>
-            <li>Open APIs, exportable event logs</li>
-          </ul>
-        </div>
+      <div class="card" data-animate>
+        <h4>Why teams choose AI‑Via</h4>
+        <ul style="margin:.6rem 0 0; padding-left:1.1rem; line-height:1.7">
+          <li>Works with existing controllers and cameras</li>
+          <li>Edge‑first design reduces bandwidth needs</li>
+          <li>Privacy‑first — no PII or plate storage by default</li>
+          <li>City dashboard for planning & reporting</li>
+          <li>Open APIs, exportable event logs</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ======= Footer ======= -->
   <footer>
