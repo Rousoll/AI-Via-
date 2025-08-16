@@ -539,3 +539,22 @@
       box-shadow: 0 0 0 6px var(--ring);
       border-color: var(--accent)
     }
+    #drawer {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: rgba(7,11,22,.98);
+  border-top: 1px solid rgba(255,255,255,.06);
+  z-index: 40;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+/* Hide drawer on desktop */
+@media(min-width: 768px){
+  #drawer {
+    display: none !important;
+  }
+}
