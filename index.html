@@ -202,8 +202,7 @@
             </svg>
           </div>
           <h4>Priority Signal Control</h4>
-          <p>Dynamic phase switching clears routes for emergency vehicles and reduces average wait times for all
-            drivers.</p>
+          <p>Dynamic phase switching optimizes traffic flow by clearing the routes with the highest vehicle count, while giving top priority to emergency vehicles when detected.</p>
           <div class="corner"></div>
         </article>
 
@@ -233,25 +232,25 @@
       <div class="card timeline-card" data-animate>
         <div class="step">1</div>
         <h4>Detect</h4>
-        <p>Camera stream → on‑edge CNN/YOLO → vehicle class + lane + speed. Privacy‑preserving: no faces stored.</p>
-      </div>
+<p>Counting vehicles → Prioritizing the lane with highest traffic → Emergency vehicles override → Dynamic traffic control
+</p>      </div>
 
       <div class="card timeline-card" data-animate>
         <div class="step">2</div>
         <h4>Decide</h4>
-        <p>Reinforcement learning predicts optimal phase changes to minimize delay and prioritize emergencies.</p>
+<p>Dynamic phase switching clears routes for lanes with the highest vehicle count, while giving priority to emergency vehicles when detected.</p>
       </div>
 
       <div class="card timeline-card" data-animate>
         <div class="step">3</div>
         <h4>Act</h4>
-        <p>Signal controller receives commands via secure API/IO to switch to green corridors.</p>
+<p>Signal controller receives commands via secure API/IO to dynamically switch lights, clearing routes for high-traffic lanes and giving emergency vehicles first priority.</p>
       </div>
 
       <div class="card timeline-card" data-animate>
         <div class="step">4</div>
         <h4>Learn</h4>
-        <p>Continuous feedback loop updates policies per intersection and time of day.</p>
+<p>Continuous feedback loop monitors traffic and emergency patterns to optimize signal timing for each intersection in real time.</p>
       </div>
     </div>
   </div>
@@ -263,7 +262,7 @@
   <section id="impact">
     <div class="container">
       <div class="section-head">
-        <h3>Tangible impact from day one</h3>
+        <h3>Impact from day one</h3>
         <p class="tag">Measured on pilot deployments.</p>
       </div>
       <div class="grid cols-3">
