@@ -16,9 +16,7 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    const form = document.getElementById('contactForm');
-const note = document.getElementById('formNote');
-
+  /*
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -37,4 +35,31 @@ form.addEventListener('submit', async (e) => {
     note.textContent = "Oops! Something went wrong, please try again.";
   }
 });
+*/
+const form = document.getElementById('contactForm');
+const note = document.getElementById('formNote');
 
+form.addEventListener('submit', async (e) => {
+  e.preventDefault(); // prevent default form submission
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch('sendmail.php', {
+      method: 'POST',
+      body: formData
+    });
+
+    const text = await response.text();
+
+    if (text.trim() === 'success') {
+      note.textContent = "Thank you! We'll get back to you within 1 business day.";
+      form.reset();
+    } else {
+      note.textContent = "Oops! Something went wrong, please try again.";
+    }
+  } catch (err) {
+    console.error(err);
+    note.textContent = "Error sending the form. Try again later.";
+  }
+});
