@@ -9,7 +9,7 @@
       /* Electric Cyan */
       --ink: #0b1020;
       /* base text */
-      --muted: #6b7a90;
+      --muted: #ffff;
       /* muted text */
       --bg: #070b16;
       /* page background */
@@ -178,7 +178,7 @@
     }
 
     .nav-links a {
-      color: #001b26;
+      color: #fff;
       font-weight: 700;
       opacity: .85
     }
