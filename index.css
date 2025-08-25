@@ -178,10 +178,10 @@
     }
 
     .nav-links a {
-      color: #fff;
-      font-weight: 700;
-      opacity: .85
-    }
+    color: #ffff;
+    font-weight: 700;
+    opacity: .85;
+}
 
     .nav-links a:hover {
       opacity: 1
